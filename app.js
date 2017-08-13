@@ -1,6 +1,9 @@
 var express = require("express");
+var dateFormat = require('dateformat');
 
 var app = express();
+
+app.use('/public', express.static(process.cwd() + '/public'));
 
 app.get("/public/timestamp/:dateParams", function(req, res) {
     // res.type('txt').send('Home found');
@@ -33,11 +36,10 @@ app.get("/public/timestamp/:dateParams", function(req, res) {
 
 
 
-app.listen(3000, function(error) {
-  if (error) throw error;
-  
-  console.log("Working");
+app.listen(process.env.PORT, function () {
+  console.log('Node.js listening ...');
 });
+
 
 
 // var http = require("http");
