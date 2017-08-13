@@ -3,7 +3,7 @@ var dateFormat = require('dateformat');
 
 var app = express();
 
-app.get("/timestamp/:dateParams", function(req, res) {
+app.get("/public/timestamp/:dateParams", function(req, res) {
     // res.type('txt').send('Home found');
   var output = {};
   
