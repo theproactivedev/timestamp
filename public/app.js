@@ -12,9 +12,13 @@ app.get("/timestamp/:dateParams", function(req, res) {
   
   var parameter = req.params.dateParams;
   
-  if (Number(parameter) && paramter > 0) {
+  if (Number(parameter) && parameter > 0) {
     var reformedDate = new Date(Number(parameter));
     
+    output = {
+      unix: parameter,
+      natural: 
+    };
     
   } else if (parameter.indexOf("%") > -1) {
     var trimmedDate = parameter.replace(/%20/g, " ");
