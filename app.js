@@ -14,5 +14,5 @@ app.use(cors());
 
 
 app.listen(3000, function() {
-  console.log("|Working");
+  console.log("Working");
 });
