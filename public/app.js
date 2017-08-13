@@ -1,5 +1,4 @@
 var express = require("express");
-var dateFormat = require('dateformat');
 
 var app = express();
 
