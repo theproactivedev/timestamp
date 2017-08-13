@@ -12,7 +12,11 @@ app.get("/timestamp/:dateParams", function(req, res) {
   
   var parameter = req.params.dateParams;
   
-  if (parameter
+  if (Number(parameter)) {
+    //unix
+  } else if (parameter.indexOf("%") > -1) {
+    v
+  }
   
   
 });
