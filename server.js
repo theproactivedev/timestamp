@@ -8,6 +8,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
+var dateFormat = require("dateformat");
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -32,6 +33,36 @@ app.route('/_api/package.json')
       res.type('txt').send(data.toString());
     });
   });
+
+app.route("/timestamp/:dateParams").get(function(req, res) {
+  var output = {};
+  
+  var parameter = req.params.dateParams;
+  
+  if (Number(parameter) && parameter > 0) {
+    var reformedDate = new Date(Number(parameter));
+    
+    output = {
+      unix: parameter,
+      natural: dateFormat(reformedDate, "longDate")
+    };
+    
+  } else if (parameter.indexOf(" ") > -1) {
+    // var trimmedDate = parameter.replace(/%20/g, " ");
+    output = {
+      unix: Date.parse(req.params.dateParams),
+      natural: req.params.dateParams
+    };
+  } else {
+    output = {
+      itsnull : req.params.dateParams
+    };
+  }
+  
+  res.json(output);
+    // res.type('txt').send('found');
+
+});
   
 app.route('/')
     .get(function(req, res) {
