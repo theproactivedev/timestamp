@@ -1,10 +1,7 @@
 var express = require("express");
-var bodyParser = require("body-parser");
-var cors = require("cors");
+var dateFormat = require('dateformat');
 
-var app = module.exports = express();
-app.use(bodyParser.json());
-app.use(cors());
+var app = express();
 
 app.get("/timestamp/:dateParams", function(req, res) {
     // res.type('txt').send('Home found');
@@ -17,7 +14,7 @@ app.get("/timestamp/:dateParams", function(req, res) {
     
     output = {
       unix: parameter,
-      natural: 
+      natural: dateFormat(reformedDate, "longDate")
     };
     
   } else if (parameter.indexOf("%") > -1) {
@@ -29,7 +26,6 @@ app.get("/timestamp/:dateParams", function(req, res) {
   }
   
   res.json(output);
-  
   
 });
 
