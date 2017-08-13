@@ -13,6 +13,8 @@ app.use(cors());
 
 
 
-app.listen(3000, function() {
+app.listen(3000, function(error) {
+  if (error) throw error;
+  
   console.log("Working");
 });
