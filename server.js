@@ -49,13 +49,17 @@ app.route("/timestamp/:dateParams").get(function(req, res) {
     
   } else if (parameter.indexOf(" ") > -1) {
     // var trimmedDate = parameter.replace(/%20/g, " ");
+    
+    
     output = {
       unix: Date.parse(req.params.dateParams),
       natural: req.params.dateParams
     };
   } else {
     output = {
-      itsnull : req.params.dateParams
+      itsnull : req.params.dateParams,
+      unix: null,
+      natural: null
     };
   }
   
