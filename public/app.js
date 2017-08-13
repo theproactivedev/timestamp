@@ -8,15 +8,23 @@ app.use(cors());
 
 app.get("/timestamp/:dateParams", function(req, res) {
     // res.type('txt').send('Home found');
-  
+  var output = {};
   
   var parameter = req.params.dateParams;
   
   if (Number(parameter)) {
-    //unix
+    var reformedDate = new Date(Number(parameter));
+    
+    
   } else if (parameter.indexOf("%") > -1) {
-    v
+    var trimmedDate = parameter.replace(/%20/g, " ");
+    output = {
+      unix: Date.parse(trimmedDate),
+      natural: trimmedDate
+    };
   }
+  
+  res.json(output);
   
   
 });
