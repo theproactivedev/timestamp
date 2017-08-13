@@ -12,7 +12,7 @@ app.get("/timestamp/:dateParams", function(req, res) {
   
   var parameter = req.params.dateParams;
   
-  if (Number(parameter)) {
+  if (Number(parameter) && paramter > 0) {
     var reformedDate = new Date(Number(parameter));
     
     
