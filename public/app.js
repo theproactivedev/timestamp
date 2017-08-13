@@ -10,7 +10,7 @@ app.get("/timestamp/:dateParams", function(req, res) {
     res.type('txt').send('Home found');
   
   
-  var 
+  var parameter = req.params.dateParams;+
 });
 
 
