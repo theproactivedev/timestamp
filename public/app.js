@@ -6,8 +6,11 @@ var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get("/home", function(req, res) {
+app.get("/timestamp/:dateParams", function(req, res) {
     res.type('txt').send('Home found');
+  
+  
+  var 
 });
 
 
