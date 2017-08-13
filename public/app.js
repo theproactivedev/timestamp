@@ -6,8 +6,8 @@ var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get("/", function(req, res) {
-  
+app.get("/home", function(req, res) {
+    res.type('txt').send('Home found');
 });
 
 
