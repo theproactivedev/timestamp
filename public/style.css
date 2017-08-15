@@ -5,13 +5,8 @@ body {
 	font-size: 16px;
 	color: #fff;
 	background-color: #000;
-	text-align: center;
 }
 
-.container {
-	padding: 0;
-	margin-top: 40px;
-}
 
 .footer {
 	margin-top: 60px;
