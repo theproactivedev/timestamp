@@ -27,6 +27,21 @@ ul {
 a {
 	color: #2574A9;
 }
+
+.output p:last-of-type {
+  border-left: 4px solid #337ab7;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
 /****** Logo Div Styling ******/
 
 img {
