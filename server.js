@@ -36,15 +36,22 @@ app.route('/_api/package.json')
 
 app.route("/timestamp/:dateParams").get(function(req, res) {
   var output = {};
+  var dateFormatting = {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
   
   var parameter = req.params.dateParams;
   
   if (Number(parameter) && parameter > 0) {
-    var reformedDate = new Date(Number(parameter));
+    var naturalDate = new Date(parameter * 1000);
+    naturalDate = naturalDate.toLocaleDateString("en-us", dateFormatting);
+    
     
     output = {
       unix: parameter,
-      natural: dateFormat(reformedDate, "longDate")
+      natural: reformedDate
     };
     
   } else if (parameter.indexOf(" ") > -1) {
