@@ -50,9 +50,10 @@ app.route("/timestamp/:dateParams").get(function(req, res) {
   } else if (parameter.indexOf(" ") > -1) {
     
     // var reformedDate = new Date(Number(parameter));
+    var unixDate = new Date(parameter).getTime() / 1000;
   
     output = {
-      unix: Date.parse(parameter),
+      unix: unixDate,
       natural: parameter
     };
   } else {
