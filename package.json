@@ -1,5 +1,5 @@
 {
-  "name": "fcc-learn-npm-package-json",
+  "name": "timestamp-microservice",
   "dependencies": {
     "express": "^4.14.0"
   },
@@ -12,7 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://idontknow/todo.git"
+    "url": "https://github.com/theproactivedev/timestamp.git"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "description": "This is built with HTML, CSS and JavaScript. I also used frameworks like Bootstrap and Express.js.",
+  "version": "1.0.0",
+  "keywords": [
+    "unix",
+    "natural",
+    "date"
+  ],
+  "author": "Eirin Gonzales",
+  "license": "ISC"
 }
