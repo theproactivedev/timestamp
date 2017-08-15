@@ -41,38 +41,30 @@ app.route("/timestamp/:dateParams").get(function(req, res) {
     month: "long",
     day: "numeric"
   };
+  var unixDate, naturalDate;
   
   var parameter = req.params.dateParams;
   
   if (Number(parameter) && parameter > 0) {
-    var naturalDate = new Date(parameter * 1000);
+    unixDate = parameter;
+    naturalDate = new Date(parameter * 1000);
     naturalDate = naturalDate.toLocaleDateString("en-us", dateFormatting);
-    
-    
-    output = {
-      unix: parameter,
-      natural: reformedDate
-    };
     
   } else if (parameter.indexOf(" ") > -1) {
     
-    // var reformedDate = new Date(Number(parameter));
-    var unixDate = new Date(parameter).getTime() / 1000;
+    unixDate = new Date(parameter).getTime() / 1000;
+    naturalDate = new Date(parameter);
+    naturalDate = naturalDate.toLocaleDateString("en-us", dateFormatting);
   
-    output = {
-      unix: unixDate,
-      natural: parameter
-    };
   } else {
-    output = {
-      itsnull : req.params.dateParams,
-      unix: null,
-      natural: null
-    };
+    unixDate = null;
+    naturalDate = null;
   }
   
-  res.json(output);
-    // res.type('txt').send('found');
+  res.json({
+    unix: unixDate,
+    natural: naturalDate
+  });
 
 });
   
