@@ -1,8 +1,6 @@
 {
   "name": "fcc-learn-npm-package-json",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "cors": "^2.8.4",
     "express": "^4.14.0"
   },
   "main": "server.js",
@@ -15,5 +13,6 @@
   "repository": {
     "type": "git",
     "url": "https://idontknow/todo.git"
-  }
+  },
+  "devDependencies": {}
 }
